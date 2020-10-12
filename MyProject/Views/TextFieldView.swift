@@ -1,21 +1,17 @@
-//
-//  TextFieldView.swift
-//  MyProject
-//
-//  Created by Le Manh on 9/29/20.
-//  Copyright © 2020 Le Manh. All rights reserved.
-//
 
 import UIKit
 
 class TextFieldView: UITextField {
 
-    /*
-    // Only override draw() if you perform custom drawing.
-    // An empty implementation adversely affects performance during animation.
-    override func draw(_ rect: CGRect) {
-        // Drawing code
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        self.borderStyle = .roundedRect
+        self.heightAnchor.constraint(equalToConstant: 44).isActive = true
+        self.textAlignment = .center
+        self.widthAnchor.constraint(equalTo: self.heightAnchor, multiplier: 1).isActive = true
     }
-    */
+    required init?(coder: NSCoder) {
+        super.init(coder: coder)
+    }
 
 }

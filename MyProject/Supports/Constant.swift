@@ -8,6 +8,6 @@
 
 import UIKit
 
-class Constant: NSObject {
-
+struct Constant {
+    static let baseUrl = "https://itro.vn"
 }

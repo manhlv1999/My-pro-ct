@@ -1,30 +1,26 @@
-//
-//  PostSavedViewController.swift
-//  MyProject
-//
-//  Created by Le Manh on 10/7/20.
-//  Copyright © 2020 Le Manh. All rights reserved.
-//
-
 import UIKit
 
 class PostSavedViewController: UIViewController {
 
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.setNavigationBarHidden(false, animated: animated)
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        setupUI()
+        setupConstraints()
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    @objc func doBackButton (){
+        self.navigationController?.popViewController(animated: true)
     }
-    */
-
+    func setupUI(){
+        view.backgroundColor = .white
+        title = "TIN ĐĂNG DÃ LƯU"
+        let backButton = UIBarButtonItem(image: UIImage(named: "icon_back"), style: .done, target: self, action: #selector(doBackButton))
+        navigationItem.leftBarButtonItem = backButton
+    }
+    func setupConstraints(){
+        
+    }
 }
